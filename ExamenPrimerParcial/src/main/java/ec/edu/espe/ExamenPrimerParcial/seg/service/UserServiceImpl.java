@@ -19,4 +19,22 @@ public class UserServiceImpl implements UserService{
     public List<User> listByStatus(String status){
         return userRepository.findAllByStatus(status);
     }
+
+    @Override
+    public Object insertUser(User user){
+        return userRepository.save(user);
+    }
+
+    @Override
+    public Object readUser(Number codUser){
+        return userRepository.findById(codUser);
+    }
+    @Override
+    public Object updateUser(User user){
+        return userRepository.save(user);
+    }
+    @Override
+    public void deleteUser(User user){
+        userRepository.delete(user);
+    }
 }

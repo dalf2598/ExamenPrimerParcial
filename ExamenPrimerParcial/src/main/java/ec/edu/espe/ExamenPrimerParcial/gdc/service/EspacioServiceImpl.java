@@ -20,4 +20,21 @@ public class EspacioServiceImpl implements EspacioService{
     public List<Espacio> greaterThanDate(Date date){
         return espacioRepository.findByStartGreaterThan(date);
     }
+
+    @Override
+    public Object insertEspacio(Espacio espacio){
+        return espacioRepository.save(espacio);
+    }
+    @Override
+    public Object readEspacio(Number codespacio){
+        return espacioRepository.findById(codespacio);
+    }
+    @Override
+    public Object updateEspacio(Espacio espacio){
+        return espacioRepository.save(espacio);
+    }
+    @Override
+    public void deleteEspacio(Espacio espacio){
+        espacioRepository.delete(espacio);
+    }
 }

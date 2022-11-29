@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Number> {
     List<User> findAllByStatus(String status);
+
+
 }
